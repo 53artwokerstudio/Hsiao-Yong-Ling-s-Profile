@@ -1,5 +1,5 @@
 <template>
-  <div class="home ContainerSpacing">
+  <div class="home ContainerSpacing" data-aos="fade-up">
 
     <img class="myPhoto" alt="Hello!期待您的聯繫！" src="../assets/img/myPhoto.png" />
 
@@ -96,7 +96,7 @@ export default {
 
   .home{
     @apply flex flex-wrap 
-    sm:flex-nowrap;
+    lg:flex-nowrap;
   }
 
  .InfoTitle{

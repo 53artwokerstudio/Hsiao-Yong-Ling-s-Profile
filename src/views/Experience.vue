@@ -1,5 +1,5 @@
 <template>
-<div class="InfoText ContainerSpacing">
+<div class="InfoText" data-aos="fade-up">
         <TitleBar
         :PageName ="PageName" />
 

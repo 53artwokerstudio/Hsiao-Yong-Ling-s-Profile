@@ -42,7 +42,7 @@ body{
 }
 
 .nav {@apply text-center  flex justify-center overflow-hidden h-24 py-2
-              w-full border border-pink-500;}
+             w-4/5 sm:w-2/3;}
 .nav a{@apply pt-8 pb-36 mr-1 w-32 mt-4 
             text-myBrown font-bold border border-white
             bg-myBrown-light

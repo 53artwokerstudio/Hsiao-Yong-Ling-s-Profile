@@ -3,11 +3,13 @@
         <div class="ProjectItemImg">
             <a :href="ProjectListLink" Target="_blank">
             <img :src="ProjectListImg"
+                 class="ProjectListImgSet"
                  alt="開新視窗" srcset="">
             </a>
         </div>
 
-        <div class="ProjectItemText">
+
+        <div class="ProjectItemText col-span-2">
             <div class="ItemSpacing">
                 <a :href="href" Target="_blank">
                     <h2> {{ ProjectListTitle }} </h2>
@@ -37,21 +39,20 @@ export default {
 
 <style lang="postcss">
     .ProjectList{
-        @apply flex flex-wrap justify-center items-center border-b border-myBrown-light pb-10
-        sm:flex-nowrap;
+        @apply grid grid-cols-3 gap-4  border-b border-myBrown-light pb-10 items-center;
     }
 
     .ProjectItemImg{
-        @apply border border-myBrown rounded-3xl shadow-md mx-auto mb-5 overflow-hidden
-        sm:mr-20 ;
+        @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-60;
     }
     .ProjectItemImg:hover{
         @apply transition duration-300 shadow-lg;
     }
 
-    .ProjectItemText{
-        @apply flex flex-col items-center sm:items-start w-2/3;
+    .ProjectListImgSet{
+        @apply object-cover overflow-hidden w-full h-full;
     }
+
 
     .ViewBTN{
         @apply bg-myBrown-light border border-myBrown shadow-md py-2 px-16 rounded-full;

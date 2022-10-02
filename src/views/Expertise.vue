@@ -1,5 +1,5 @@
 <template>
-  <div class="Expertise  ContainerSpacing">
+  <div class="Expertise" data-aos="fade-up">
         <TitleBar
         :PageName ="PageName" />
 
