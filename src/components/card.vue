@@ -1,34 +1,24 @@
 <template>
-        <div class="ItemSpacing grid grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center">
-            <div class="ListImg col-span-3 lg:col-span-1">
+        <div class="flex flex-col transform hover:scale-105 duration-500 ease-in-out
+        group">
+            <div class="CardImg mb-4">
                 <a :href="ListLink" Target="_blank">
                    <img :src="ListImg" 
                         class="ImgSet"
                         alt="" srcset="">
                 </a>
+
             </div>
 
-            <div class="col-span-3 lg:col-span-2 flex flex-col items-center lg:items-start">
-                 
-                 <div class="ItemSpacing">
-                    <a :href="ListLink" Target="_blank">
-                        <h2 class="ListTitle">{{ ListTitle }}</h2>
-                    </a>
-                <div v-html="ListText"></div>
-            </div>
-
-            <a  :href="ListLink"
-                Target="_blank"
-                class="ViewBTN"> VIEW
+            <a :href="ListLink" Target="_blank" class="text-center">
+                <h2 class="group-hover:text-myBrown transition" v-html="ListTitle"></h2>
             </a>
-
-            </div>
         </div>
 </template>
 
 <script>
 export default {
-  name: "List",
+  name: "Card",
   props:{ 
     ListTitle : String,
     ListImg : String,
@@ -42,8 +32,8 @@ export default {
 .ListTitle:hover{
   @apply text-myBrown transition;
 }
-.ListImg{
-    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48; 
+.CardImg{
+    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48 ; 
 }
 .ListImg:hover{
     @apply shadow-lg transition; 

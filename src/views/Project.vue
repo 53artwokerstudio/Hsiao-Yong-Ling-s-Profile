@@ -1,5 +1,5 @@
 <template>
-<div class="Project " data-aos="fade-up">
+<div class="Project" data-aos="fade-up">
   <TitleBar
   :PageName ="PageName" />
 
@@ -70,7 +70,7 @@ export default {
   @apply text-myBrown transition;
 }
 .ListImg{
-    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-60; 
+    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48; 
 }
 .ListImg:hover{
     @apply shadow-lg transition; 
