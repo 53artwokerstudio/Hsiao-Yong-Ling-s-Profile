@@ -5,6 +5,9 @@ import store from "./store";
 import Clipboard from 'v-clipboard';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
 
 
 

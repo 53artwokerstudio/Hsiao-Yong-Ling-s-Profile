@@ -1,6 +1,5 @@
 <template>
-        <div class="flex flex-col transform hover:scale-105 duration-500 ease-in-out
-        group">
+        <div class="flex flex-col group">
             <div class="CardImg mb-4">
                 <a :href="ListLink" Target="_blank">
                    <img :src="ListImg" 
@@ -11,17 +10,39 @@
             </div>
 
             <a :href="ListLink" Target="_blank" class="text-center">
-                <h2 class="group-hover:text-myBrown transition" v-html="ListTitle"></h2>
+                <h2 class="group-hover:text-myBrown  ease-in-out transition" v-html="ListTitle"></h2>
             </a>
+
+            <ul class="CardListLink flex justify-center">
+                <li v-if="ListIcon.UI">
+                    <a :href="ListLink.UI" Target="_blank">
+                        <i class="fa-brands fa-figma"></i>
+                    </a>
+                </li>
+                <li  v-if="ListIcon.Prototype">
+                    <a :href="ListLink.Prototype" Target="_blank">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </li>
+                <li v-if="ListIcon.Web">
+                    <a :href="ListLink.Web" Target="_blank">
+                        <i class="fa-solid fa-link"></i>
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
 </template>
 
 <script>
+
 export default {
   name: "Card",
   props:{ 
     ListTitle : String,
     ListImg : String,
+    ListIcon: Array,
     ListLink : String,
     ListText : String,
    },
@@ -33,13 +54,17 @@ export default {
   @apply text-myBrown transition;
 }
 .CardImg{
-    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48 ; 
+    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48 lg:h-64; 
 }
 .ListImg:hover{
     @apply shadow-lg transition; 
 }
 .ImgSet{
-    @apply object-cover overflow-hidden w-full h-full; 
+    @apply object-cover overflow-hidden w-full h-full transform hover:scale-110 duration-500; 
+}
+
+.CardListLink li{
+    @apply text-center  text-myBrown-dark hover:text-myBrown w-7 h-7 mx-1;
 }
 
 .ViewBTN{
