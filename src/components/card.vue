@@ -1,5 +1,5 @@
 <template>
-        <div class="flex flex-col group">
+        <div class="flex flex-col">
             <div class="CardImg mb-4">
                 <a :href="ListLink" Target="_blank">
                    <img :src="ListImg" 
@@ -9,19 +9,20 @@
 
             </div>
 
-            <a :href="ListLink" Target="_blank" class="text-center">
-                <h2 class="group-hover:text-myBrown  ease-in-out transition" v-html="ListTitle"></h2>
-            </a>
-
             <ul class="CardListLink flex justify-center">
                 <li v-if="ListIcon.UI">
                     <a :href="ListLink.UI" Target="_blank">
                         <i class="fa-brands fa-figma"></i>
                     </a>
                 </li>
-                <li  v-if="ListIcon.Prototype">
-                    <a :href="ListLink.Prototype" Target="_blank">
-                        <i class="fa-solid fa-play"></i>
+                <li  v-if="ListIcon.WebPrototype">
+                    <a :href="ListLink.WebPrototype" Target="_blank">
+                        <i class="fa-solid fa-laptop"></i>
+                    </a>
+                </li>
+                <li  v-if="ListIcon.MobilePrototype">
+                    <a :href="ListLink.MobilePrototype" Target="_blank">
+                        <i class="fa-solid fa-mobile"></i>
                     </a>
                 </li>
                 <li v-if="ListIcon.Web">
@@ -31,6 +32,10 @@
                 </li>
 
             </ul>
+
+            <a :href="ListLink" Target="_blank" class="text-center">
+                <h2 class="ease-in-out transition" v-html="ListTitle"></h2>
+            </a>
 
         </div>
 </template>
@@ -64,7 +69,7 @@ export default {
 }
 
 .CardListLink li{
-    @apply text-center  text-myBrown-dark hover:text-myBrown w-7 h-7 mx-1;
+    @apply text-center  text-myBrown hover:text-myBrown-dark w-7 h-7 mx-1;
 }
 
 .ViewBTN{
