@@ -30,7 +30,7 @@ export default {
   }
 
   .TagText{
-    @apply  border border-myBrown text-center px-10 pt-9 pb-8 -mt-4;
+    @apply  border border-myBrown text-center px-8 pt-9 pb-8 -mt-4 h-full;
   }
 
 </style>

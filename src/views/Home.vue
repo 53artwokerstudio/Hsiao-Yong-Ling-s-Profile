@@ -50,7 +50,7 @@
       </li>
       </ul>
 
-      <div class="OutInfoItemBox">
+      <div class="OutInfoItemBox grid grid-cols-1 xl:grid-cols-2 gap-4">
 
          <InfoItemBox>
            <template v-slot:InfoTitle>
@@ -127,9 +127,9 @@ export default {
     @apply font-bold  w-40;
   }
 
-  .OutInfoItemBox{
+  /* .OutInfoItemBox{
     @apply flex flex-wrap justify-center
     sm:justify-between;
-  }
+  } */
 
 </style>

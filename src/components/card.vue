@@ -59,7 +59,7 @@ export default {
   @apply text-myBrown transition;
 }
 .CardImg{
-    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48 lg:h-64; 
+    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48; 
 }
 .ListImg:hover{
     @apply shadow-lg transition; 
