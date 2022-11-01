@@ -50,8 +50,8 @@ export default {
           title: "JavaScript",
           text: ['了解 ES6 標準',
                 'AJAX / JSON 串接第三方 API',
-                'ESLint 管控程式品質',
-                'jQuery 製作互動效果',
+                'ESLint 管控程式',
+                'jQuery 互動效果',
                 'Gulp 簡化人工步驟'],
         },
         {
@@ -102,11 +102,11 @@ export default {
   .OutExpertiseBox{
     max-height: 470px;
     @apply flex flex-wrap justify-center overflow-hidden 
-    lg:flex-nowrap ;
+    xl:flex-nowrap ;
   }
 
   .ExpertiseItemBtnBox{
-    @apply lg:hidden flex items-center justify-between w-auto;
+    @apply xl:hidden flex items-center justify-between w-auto;
   }
 
   .moveLine{

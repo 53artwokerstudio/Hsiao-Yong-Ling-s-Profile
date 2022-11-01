@@ -42,4 +42,8 @@ export default {
       @apply mt-8;
     }
 
+    .ExpertiseBoxItem{
+      @apply text-sm mb-1;
+    }
+
 </style>

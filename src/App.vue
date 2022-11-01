@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav" class="nav">
+    <div class="flex justify-between px-5 bg-myBrown w-full py-4 mb-5 text-white font-bold sm:hidden">
+      <div class="text-left">Hsiao Yong Ling's Profile</div>
+      <div @click="toggle"><i class="fa-solid fa-bars"></i></div>
+    </div> 
+
+    <div id="nav" class="nav" :class="open ? 'flex': 'hidden'">
       <router-link to="/">About</router-link> 
       <router-link to="/Experience">Experience</router-link> 
       <router-link to="/Project">Project</router-link>
@@ -9,9 +14,7 @@
     </div>
 
 <div class="box">
-
           <router-view />
-
 </div>
 
 
@@ -23,8 +26,15 @@ export default {
   name: 'app',
   data () { 
     return { 
-      index:0
-       } },
+      index:0,
+      open: true,
+       }},
+  methods:{
+    toggle() {
+    this.open = !this.open;
+    },
+  },
+
 }
 </script>
 
@@ -38,18 +48,20 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center sm:relative;
 }
 
-.nav {@apply text-center  flex justify-center overflow-hidden h-24 py-2
-             w-4/5 sm:w-2/3;}
-.nav a{@apply pt-8 pb-36 mr-1 w-32 mt-4 
-            text-myBrown font-bold border border-white
+.nav {@apply flex flex-col mt-14 w-full absolute z-10 sm:relative sm:z-auto
+             sm:flex-row sm:text-center sm:justify-center sm:overflow-hidden sm:h-24 sm:py-2 sm:mt-0 sm:w-3/5 lg:w-4/5;}
+/* .nav{@apply flex flex-col w-full  mt-14 absolute z-10;} */
+.nav a{@apply sm:pt-8 sm:pb-36 mr-1 sm:w-32 sm:mt-4 
+            text-myBrown font-bold border sm:border-white
             bg-myBrown-light
-            rounded-full text-center;}
-.nav a:hover{@apply transition ease-in duration-100 text-white bg-myBrown mt-2;}
+            sm:rounded-full text-center
+            py-4 w-full;}
+.nav a:hover{@apply transition ease-in duration-100 text-white bg-myBrown sm:mt-2;}
 .nav .router-link-exact-active{@apply  mt-0
-text-myBrown-dark  border-myBrown
+text-myBrown-dark  sm:border-myBrown
 bg-myBlue pointer-events-none;}
 
 

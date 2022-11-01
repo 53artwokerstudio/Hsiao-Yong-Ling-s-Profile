@@ -17,7 +17,7 @@
 @layer components {
     .box{
         min-height: 700px;
-        @apply  bg-white rounded-3xl px-8 py-4 shadow-xl mb-10;
+        @apply  bg-white rounded-3xl px-8 py-4 shadow-xl mb-10 w-full;
         @media (min-width: 640px) { @apply  px-24 py-8 max-w-7xl w-3/4;}
 
     }
