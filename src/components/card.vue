@@ -1,7 +1,7 @@
 <template>
         <div class="flex flex-col">
             <div class="CardImg mb-4">
-                <a :href="ListLink" Target="_blank">
+                <a :href="ListLink.UI" Target="_blank">
                    <img :src="ListImg" 
                         class="ImgSet"
                         alt="" srcset="">

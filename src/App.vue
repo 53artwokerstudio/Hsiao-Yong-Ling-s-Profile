@@ -21,10 +21,17 @@
       <router-link to="/UIUX">UI/UX</router-link> 
     </div>
 
-<div class="box">
-          <router-view />
-</div>
+    <div class="box  relative z-10">
+      <router-view />
+    </div>
 
+  <div class="hidden sm:block fixed top-20 left-0 z-0 w-80 " data-aos="fade-right">
+    <img src="./assets/img/bg-bubble.png" alt="" srcset="">
+  </div>
+
+  <div class="hidden sm:block fixed bottom-0 right-10 z-0 w-56"  data-aos="fade-left">
+    <img src="./assets/img/bg-bubble-2.png" alt="" srcset="">
+  </div>
 
   </div>
 </template>
@@ -61,12 +68,12 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply flex flex-col items-center sm:relative;
+  @apply flex flex-col items-center relative;
 }
 
-.nav {@apply flex sm:relative sm:z-auto
+.nav {@apply flex sm:relative sm:z-20
              sm:flex-row sm:text-center sm:justify-center sm:overflow-hidden sm:h-24 sm:py-2 sm:mt-0 sm:w-3/5 lg:w-4/5;}
-.nav_sm{@apply flex flex-col w-full  mt-14 absolute z-10;}
+.nav_sm{@apply flex flex-col w-full  mt-14 absolute z-20;}
 .nav a{@apply sm:pt-8 sm:pb-36 mr-1 sm:w-32 sm:mt-4 
             text-myBrown font-bold border sm:border-white
             bg-myBrown-light

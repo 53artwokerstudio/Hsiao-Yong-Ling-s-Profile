@@ -13,8 +13,8 @@
           嗨！我是蕭詠齡，長年接案經驗使我可以獨立完成專案，也總是與客戶、同事維持良好的合作關係。
           <br/>
           <br/>
-          熟悉 <span>HTML5 / CSS3 / ES6</span> 前端技術，能夠透過
-          <span>Bootstrap、JQuery</span> 等框架精確完成高度還原設計稿且符合 
+          具 <span>HTML5 / CSS3 / ES6</span> 前端技術，能夠透過
+          <span>Bootstrap、JQuery、tailwind</span> 等框架高度還原設計稿，且符合 
           <span>SEO</span> 與 <span>RWD</span> 的網頁，並使用預處理器進行網頁優化。
         </p>
       </div>
@@ -91,7 +91,7 @@ export default {
 
 <style lang="postcss">
   .myPhoto{
-    @apply max-w-full h-full mb-10 mx-auto;
+    @apply min-w-min h-80 sm:h-96 mb-10 mx-auto;
   }
 
   .home{
