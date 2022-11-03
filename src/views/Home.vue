@@ -1,9 +1,11 @@
 <template>
   <div class="home ContainerSpacing" data-aos="fade-up">
 
-    <img class="myPhoto" alt="Hello!期待您的聯繫！" src="../assets/img/myPhoto.png" />
-
     <div>
+      <img class="myPhoto" alt="Hello!期待您的聯繫！" src="../assets/img/myPhoto.png" />
+    </div>
+
+    <div class="col-span-2">
       <div class="InfoTitle ItemSpacing">
         <h1>蕭詠齡</h1>
         <h2>Hsiao Yong Ling</h2>
@@ -91,12 +93,11 @@ export default {
 
 <style lang="postcss">
   .myPhoto{
-    @apply min-w-min h-80 sm:h-96 mb-10 mx-auto;
+    @apply max-w-full h-auto  mx-auto;
   }
 
   .home{
-    @apply flex flex-wrap 
-    lg:flex-nowrap;
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-4;
   }
 
  .InfoTitle{
@@ -126,10 +127,5 @@ export default {
   .InfoListTitle{
     @apply font-bold  w-40;
   }
-
-  /* .OutInfoItemBox{
-    @apply flex flex-wrap justify-center
-    sm:justify-between;
-  } */
 
 </style>
