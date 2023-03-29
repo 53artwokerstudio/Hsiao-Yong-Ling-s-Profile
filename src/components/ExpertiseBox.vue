@@ -1,5 +1,5 @@
 <template>
-  <div class="ExpertiseBox">
+  <div class="ExpertiseBox hover:text-myBrown-lightest">
         <h2 class="ExpertiseBoxTitle">
             {{ propsTitle }}
         </h2>
@@ -26,12 +26,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="postcss">
 
-  .ExpertiseBox{
+.ExpertiseBox{
     @apply  bg-myBrown-lightest border border-myBrown-dark  rounded-full
-    w-56 h-80 text-center shadow-md  px-4  mt-20 mr-6 ml-6 sm:ml-0;
+    w-56 h-80 text-center  px-4  mt-20 mr-5 ml-5 sm:ml-0  text-myBrown-dark ;
   }
   .ExpertiseBox:hover{
-    @apply  sm:mt-10 transition duration-150  ;
+    transform: translateY(-20px);
+    @apply transition ease-linear duration-300 ;
   }
 
     .ExpertiseBox:last-child{
@@ -42,8 +43,8 @@ export default {
       @apply mt-8;
     }
 
-    .ExpertiseBoxItem{
-      @apply text-sm mb-1;
+  .ExpertiseBoxTitle{
+      @apply mt-10 mb-8;
     }
 
 </style>

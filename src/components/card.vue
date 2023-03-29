@@ -1,5 +1,5 @@
 <template>
-        <div class="flex flex-col">
+        <div class="flex flex-col group">
             <div class="CardImg mb-4">
                 <a :href="ListLink.UI" Target="_blank">
                    <img :src="ListImg" 
@@ -34,7 +34,7 @@
             </ul>
 
             <a :href="ListLink" Target="_blank" class="text-center">
-                <h2 class="ease-in-out transition" v-html="ListTitle"></h2>
+                <h2 v-html="ListTitle"></h2>
             </a>
 
         </div>
@@ -55,9 +55,6 @@ export default {
 </script>
 
 <style lang="postcss">
-.ListTitle:hover{
-  @apply text-myBrown transition;
-}
 .CardImg{
     @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48; 
 }
@@ -65,7 +62,7 @@ export default {
     @apply shadow-lg transition; 
 }
 .ImgSet{
-    @apply object-cover overflow-hidden w-full h-full transform hover:scale-110 duration-500; 
+    @apply object-cover overflow-hidden w-full h-full transform  hover:scale-110 duration-500; 
 }
 
 .CardListLink li{

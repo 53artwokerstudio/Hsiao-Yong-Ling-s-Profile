@@ -17,9 +17,13 @@
         </ul>
 
         <div class="ExpertiseItemBtnBox">
-        <p class="ExpertiseItemBtn"  @click="previous"> ＜ </p>
+        <p class="ExpertiseItemBtn"  @click="previous">
+          <i class="fa-solid fa-angle-left"></i> 
+        </p>
           <div class="moveLine"></div>
-        <p class="ExpertiseItemBtn"  @click="next"> ＞ </p>
+        <p class="ExpertiseItemBtn"  @click="next">
+          <i class="fa-solid fa-angle-right"></i>
+        </p>
           </div>
 
         </div>
@@ -102,11 +106,11 @@ export default {
   .OutExpertiseBox{
     max-height: 470px;
     @apply flex flex-wrap justify-center overflow-hidden 
-    xl:flex-nowrap ;
+    2xl:flex-nowrap ;
   }
 
   .ExpertiseItemBtnBox{
-    @apply xl:hidden flex items-center justify-between w-auto;
+    @apply 2xl:hidden flex items-center justify-between w-auto;
   }
 
   .moveLine{
@@ -116,6 +120,11 @@ export default {
   .ExpertiseItemBtn{
     @apply bg-myBrown text-white  text-center
     rounded-full px-4 py-2 my-auto shadow-md;
+  }
+
+  .ExpertiseItemBtn:hover{
+    @apply bg-myBrown-light text-myBrown-dark
+    transition ease-linear duration-300;
   }
 
 </style>
