@@ -14,11 +14,17 @@
     </div>
 
     <div id="navsm" class="nav nav_sm" :class="open ? 'flex': 'hidden'">
-      <router-link to="/">About</router-link> 
-      <router-link to="/Experience">Experience</router-link> 
-      <router-link to="/Project">Project</router-link>
-      <router-link to="/Expertise">Expertise</router-link> 
-      <router-link to="/UIUX">UI/UX</router-link> 
+
+      <router-link to="/">關於我 About</router-link> 
+      <router-link to="/Experience">經歷 Experience</router-link> 
+      <router-link to="/Project">專案 Project</router-link>
+      <router-link to="/Expertise">技能 Expertise</router-link> 
+      <router-link to="/UIUX">UI/UX</router-link>
+             <div class="UIUXitem">
+                <router-link to="/UIUX/accessible">無障礙 Accessible</router-link> 
+                <router-link to="/UIUX/multi">多頁式 Multi</router-link> 
+                <router-link to="/UIUX/single">單頁式 Single</router-link> 
+        </div>
     </div>
 
     <div class="box  relative z-10">
@@ -84,5 +90,8 @@ body{
 text-myBrown-dark  sm:border-myBrown
 bg-myBlue pointer-events-none;}
 
+.nav .UIUXitem { @apply grid  bg-white; }
+.nav .UIUXitem a{ @apply bg-white text-sm;}
+.nav .UIUXitem a:hover{ @apply bg-myBlue text-myBrown;}
 
 </style>

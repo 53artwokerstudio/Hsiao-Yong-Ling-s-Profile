@@ -3,10 +3,20 @@
         <TitleBar
         :PageName ="PageName" />
 
+        <div class="hidden sm:grid md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8 mb-6
+                   UIUXListTag">
+            
+                <router-link to="/UIUX">總覽 All</router-link> 
+                <router-link to="/UIUX/accessible">無障礙 Accessible</router-link> 
+                <router-link to="/UIUX/multi">多頁式 Multi</router-link> 
+                <router-link to="/UIUX/single">單頁式 Single</router-link> 
+        </div>
+
+        
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
             <Card
-            v-for=" (item,i) in UIUXListItem "
+            v-for=" (item,i) in filteredList "
             :key="i"
             :ListTitle ="item.ListTitle"
             :ListImg ="item.ListImg"
@@ -28,12 +38,14 @@ import  Card from "@/components/card.vue";
 export default {
     name: "UIUX",
     components: { TitleBar ,Card },
+    props: ['propsTag'],
     data() {
         return {
             PageName:'UI/UX',
             UIUXListItem:[
                 {
                     ListTitle:'<p> 屏東防災資訊平台 </p>',
+                    ListTag: ['multi','accessible'],
                     ListImg:require('../assets/img/Project-1.png'),
                     ListIcon:{
                     UI: true,
@@ -51,6 +63,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 亞灣 5GAioT 創新園區 </p>',
+                    ListTag: ['multi','accessible'],
                     ListImg:require('../assets/img/Project-3.png'),
                     ListIcon:{
                     UI: true,
@@ -68,6 +81,7 @@ export default {
                 },
                 {
                     ListTitle:'<p>開運算算 <br>2022 中原祈福祭</p>',
+                    ListTag: ['multi'],
                     ListImg:require('../assets/img/Project-4.png'),
                     ListIcon:{
                     UI: true,
@@ -85,6 +99,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> Freelance CAFE’ <br> 自由工作者咖啡廳搜尋系統 </p>',
+                    ListTag: ['multi'],
                     ListImg:require('../assets/img/Project-5.png'),
                     ListIcon:{
                     UI: true,
@@ -102,6 +117,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> PetEats 配食舖 </p>',
+                    ListTag: ['multi'],
                     ListImg:require('../assets/img/Project-6.png'),
                     ListIcon:{
                     UI: true,
@@ -119,6 +135,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> EasySplit 拆帳趣 </p>',
+                    ListTag: ['multi'],
                     ListImg:require('../assets/img/Project-7.png'),
                     ListIcon:{
                     UI: true,
@@ -136,6 +153,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> O Anime <br> 訂閱式影音平台 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-8.png'),
                     ListIcon:{
                     UI: true,
@@ -153,6 +171,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 舟舟療心室 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-9.png'),
                     ListIcon:{
                     UI: true,
@@ -170,6 +189,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> Time Will Tell <br> 時間管理工具 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-10.png'),
                     ListIcon:{
                     UI: true,
@@ -187,6 +207,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 感瘦 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-11.png'),
                     ListIcon:{
                     UI: true,
@@ -204,6 +225,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 小酌圖鑑  <br> 日本酒檢索網站 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-12.png'),
                     ListIcon:{
                     UI: true,
@@ -221,6 +243,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 蔬適點 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-13.png'),
                     ListIcon:{
                     UI: true,
@@ -238,6 +261,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 郊友趣 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-14.png'),
                     ListIcon:{
                     UI: true,
@@ -255,6 +279,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> LoveMD 電影評論網站 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-15.png'),
                     ListIcon:{
                     UI: true,
@@ -272,6 +297,7 @@ export default {
                 },                
                 {
                     ListTitle:'<p> 爬蟲工作室 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-16.png'),
                     ListIcon:{
                     UI: true,
@@ -289,6 +315,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> Hi Kids <br> 兒童才藝班預約服務 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-17.png'),
                     ListIcon:{
                     UI: true,
@@ -306,6 +333,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 粉黛蛋糕店 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-18.png'),
                     ListIcon:{
                     UI: true,
@@ -323,6 +351,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> City Lab 電動滑板電商 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-19.png'),
                     ListIcon:{
                     UI: true,
@@ -340,6 +369,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 記帳 ExpenSaver </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-20.png'),
                     ListIcon:{
                     UI: true,
@@ -357,6 +387,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 鮮品味 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-21.png'),
                     ListIcon:{
                     UI: true,
@@ -374,6 +405,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> Fangsis芳心 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-22.png'),
                     ListIcon:{
                     UI: true,
@@ -391,6 +423,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 籃球家教 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-23.png'),
                     ListIcon:{
                     UI: true,
@@ -408,6 +441,7 @@ export default {
                 },
                 {
                     ListTitle:'<p> 超級便辨變 </p>',
+                    ListTag: ['single'],
                     ListImg:require('../assets/img/Project-24.png'),
                     ListIcon:{
                     UI: true,
@@ -424,12 +458,42 @@ export default {
                     ListText:'',
                 },
             ],
+            filterTag: ''
+        }
+    },
+    computed: {
+        filteredList() {
+            let arr = this.UIUXListItem;
 
+        if (this.NewTag) {
+            arr = this.UIUXListItem.filter(item => item.ListTag.includes(this.NewTag));
+            }
+            
+            return arr;
+        },
+        NewTag(){
+            return this.$route.params.name;
+        },
+        
+    },
+    methods: {
+        filterList(tag) {
+        this.filterTag = tag;
         }
     },
 }
 </script>
 
 <style lang="postcss">  
+
+.UIUXListTag a {
+    @apply border border-myBrown-light text-sm text-myBrown py-1 px-4 rounded-full 
+        hover:text-myBrown-light hover:bg-myBrown transition;
+}
+
+.UIUXListTag  .router-link-exact-active{
+    @apply bg-myBrown text-myBrown-light ;
+}
+
 
 </style>

@@ -29,11 +29,28 @@ const routes = [
       import("../views/Project.vue"),
   },
   {
-    path: "/UIUX",
+    path: "/UIUX/:name?",
     name: "UI/UX",
-    component: () =>
-      import("../views/UIUX.vue"),
-  },
+    component: () => import("../views/UIUX.vue"),
+    children: [
+      {
+        path: "",
+        name: "",
+      },
+      {
+        path: "multi",
+        name: "multi",
+      },
+      {
+        path: "accessible",
+        name: "accessible",
+      },
+      {
+        path: "single",
+        name: "single",
+      },
+    ]
+  }
 ];
 
 const router = new VueRouter({

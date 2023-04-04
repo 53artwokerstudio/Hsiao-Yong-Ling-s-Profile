@@ -56,7 +56,7 @@ export default {
 
 <style lang="postcss">
 .CardImg{
-    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-48; 
+    @apply border border-myBrown rounded-3xl shadow-md overflow-hidden h-64 md:h-36 lg:h-40; 
 }
 .ListImg:hover{
     @apply shadow-lg transition; 
