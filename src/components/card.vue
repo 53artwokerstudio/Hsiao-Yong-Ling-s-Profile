@@ -33,7 +33,7 @@
 
             </ul>
 
-            <a :href="ListLink" Target="_blank" class="text-center">
+            <a :href="ListLink.UI" Target="_blank" class="text-center">
                 <h2 v-html="ListTitle"></h2>
             </a>
 
